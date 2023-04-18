@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tier list:</strong>
+  <%= @tier_list_item.tier_list_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tier_list_item.name %>
+</p>
+
+<p>
+  <strong>Tier:</strong>
+  <%= @tier_list_item.tier %>
+</p>
+
+<p>
+  <strong>Justification:</strong>
+  <%= @tier_list_item.justification %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tier_list_item.description %>
+</p>
+<%= link_to 'New Tier List Item', new_tier_list_tier_list_item_path(@tier_list) %>
+
+<%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, @tier_list_item) %> |
+<%= link_to 'Back', tier_list_path(@tier_list) %>

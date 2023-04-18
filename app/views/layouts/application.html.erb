@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Iteration2Again</title>
+    <title>Iteration2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <div class="container">
+  
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+  <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+    <span class="fs-4">Tier Lists!</span>
+    </a>
 
+    <ul class="nav col-10 col-md-auto mb-0 justify-content-center mb-md-0">
+      <li class="nav-link px-2 link-secondary"><a><%= link_to 'Home', root_path, class: "nav-link" %></a</li>
+      <li class="nav-link px-2 link-secondary"><a><%= link_to 'Dashboard', root_path, class: "nav-link" %></a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn btn-outline-primary me-2"><%= link_to 'Login',  root_path, class: "nav-link" %></button>
+      <button type="button" class="btn btn-primary"><%= link_to 'Sign-Up',  root_path, class: "nav-link" %></button>
+    </div>
+  </header>
+</div>
   <body>
     <%= yield %>
   </body>
 </html>
+

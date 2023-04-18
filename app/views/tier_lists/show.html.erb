@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tier_list.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tier_list.description %>
+</p>
+
+<p>
+  <strong>Numtiers:</strong>
+  <%= @tier_list.numTiers %>
+</p>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>NAme:</strong>
+  <%= @tier_list.name %>
+</p>
+
+<h2>Tier List Items</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tier_list_items.each do |tier_list_item| %>
+      <tr>
+        <td><%= tier_list_item.name %></td>
+        <td><%= link_to 'Show', tier_list_tier_list_item_path(@tier_list, tier_list_item) %></td>
+        <td><%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, tier_list_item) %></td>
+        <td><%= link_to 'Delete', tier_list_tier_list_item_path(@tier_list, tier_list_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Tier List Item', new_tier_list_tier_list_item_path(@tier_list) %>
+<%= link_to 'Edit', edit_tier_list_path(@tier_list) %> |
+<%= link_to 'Back', tier_lists_path %>
+
+
+<%= link_to 'Edit', edit_tier_list_path(@tier_list) %> |
+<%= link_to 'Back', tier_lists_path %>

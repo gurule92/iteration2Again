@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tier List Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tier list</th>
+      <th>Name</th>
+      <th>Tier</th>
+      <th>Justification</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tier_list_items.each do |tier_list_item| %>
+      <tr>
+        <td><%= tier_list_item.tier_list_id %></td>
+        <td><%= tier_list_item.name %></td>
+        <td><%= tier_list_item.tier %></td>
+        <td><%= tier_list_item.justification %></td>
+        <td><%= tier_list_item.description %></td>
+        <td><%= link_to 'Show', tier_list_item %></td>
+        <td><%= link_to 'Edit', edit_tier_list_item_path(tier_list_item) %></td>
+        <td><%= link_to 'Destroy', tier_list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tier List Item', new_tier_list_item_path %>
