@@ -1,31 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+    <h1 role="heading"> Public Tier Lists </h1>
 
-<h1>Tier Lists</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Numtiers</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <br>
+  <div class="list-group w-auto" role="list">
     <% @tier_lists.each do |tier_list| %>
-      <tr>
-        <td><%= tier_list.name %></td>
-        <td><%= tier_list.description %></td>
-        <td><%= tier_list.numTiers %></td>
-        <td><%= link_to 'Show', tier_list %></td>
-        <td><%= link_to 'Edit', edit_tier_list_path(tier_list) %></td>
-        <td><%= link_to 'Destroy', tier_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <%= link_to tier_list_path(tier_list), class: "list-group-item list-group-item-action d-flex gap-3 py-3" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512" alt="Small jet plane"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M270.7 9.7C268.2 3.8 262.4 0 256 0s-12.2 3.8-14.7 9.7L197.2 112.6c-3.4 8-5.2 16.5-5.2 25.2v77l-144 84V280c0-13.3-10.7-24-24-24s-24 10.7-24 24v56 32 24c0 13.3 10.7 24 24 24s24-10.7 24-24v-8H192v32.7L133.5 468c-3.5 3-5.5 7.4-5.5 12v16c0 8.8 7.2 16 16 16h96V448c0-8.8 7.2-16 16-16s16 7.2 16 16v64h96c8.8 0 16-7.2 16-16V480c0-4.6-2-9-5.5-12L320 416.7V384H464v8c0 13.3 10.7 24 24 24s24-10.7 24-24V368 336 280c0-13.3-10.7-24-24-24s-24 10.7-24 24v18.8l-144-84v-77c0-8.7-1.8-17.2-5.2-25.2L270.7 9.7z"/></svg>
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+          <h6 class="mb-0"><%= tier_list.name %></h6>
+          <p class="mb-0 opacity-75 col-12"><%= tier_list.description %></p>
+          </div>
+          <small class="opacity-50 text-nowrap my-2 mb-0"><%= tier_list.updated_at %></small>
+        </div>
+        <% end %>
+      <% end %>
 
-<br>
-
-<%= link_to 'New Tier List', new_tier_list_path %>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary text-white"><%= link_to 'New Tier List', new_tier_list_path, class: "text-white" %></button>
+</div>
