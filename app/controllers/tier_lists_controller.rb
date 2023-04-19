@@ -1,5 +1,6 @@
 class TierListsController < ApplicationController
   before_action :set_tier_list, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new edit create update destroy]
 
   # GET /tier_lists or /tier_lists.json
   def index

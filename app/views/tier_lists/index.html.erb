@@ -19,5 +19,7 @@
 
   </div>
   <br>
-  <button type="button" class="btn btn-primary text-white"><%= link_to 'New Tier List', new_tier_list_path, class: "text-white" %></button>
+  <% if user_signed_in? %>
+    <button type="button" class="btn btn-primary text-white"><%= link_to 'New Tier List', new_tier_list_path, class: "text-white" %></button>
+  <% end %>
 </div>
