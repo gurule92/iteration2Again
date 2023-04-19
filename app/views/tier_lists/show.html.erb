@@ -1,52 +1,70 @@
-<p id="notice"><%= notice %></p>
+<body style="background-color:#70F0E1;">
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tier_list.name %>
-</p>
+  <h4 role="heading">
+    <strong>Name:</strong>
+    <%= @tier_list.name %>
+  </h4>
+  <h4 role="heading">
+    <strong>Description:</strong>
+    <%= @tier_list.description %>
+  </h4>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tier_list.description %>
-</p>
-
-<p>
-  <strong>Numtiers:</strong>
-  <%= @tier_list.numTiers %>
-</p>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>NAme:</strong>
-  <%= @tier_list.name %>
-</p>
-
+  <br>
 <h2>Tier List Items</h2>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Tier</th>
+      <th>Items</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @tier_list_items.each do |tier_list_item| %>
+    <% tier_items_by_tier = @tier_list_items.group_by(&:tier) %>
+    <% (1...@tier_list.numTiers + 1).each do |tier| %>
       <tr>
-        <td><%= tier_list_item.name %></td>
-        <td><%= link_to 'Show', tier_list_tier_list_item_path(@tier_list, tier_list_item) %></td>
-        <td><%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, tier_list_item) %></td>
-        <td><%= link_to 'Delete', tier_list_tier_list_item_path(@tier_list, tier_list_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-             </tr>
+        <td><%= tier %></td>
+        <td>
+          <% items = tier_items_by_tier[tier] %>
+          <% if items.present? %>
+            <% items.each do |tier_list_item| %>
+              <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to tier_list_item.name, tier_list_tier_list_item_path(@tier_list, tier_list_item), class:"nav-link" %></button>
+              <%= ", " unless tier_list_item == items.last %>
+            <% end %>
+          <% else %>
+            No items
+          <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
+  <br>
+  <button type="button" class="btn btn-primary text-white" color="inherit"> <%= link_to 'New Tier List Item', new_tier_list_tier_list_item_path(@tier_list), class:"nav-link" %></button> 
+  </button> | 
+  <button type="button" class="btn btn-primary text-white"> <%= link_to 'Edit', edit_tier_list_path(@tier_list), class:"nav-link" %> </button> |
+  <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Destroy', @tier_list, method: :delete, data: { confirm: 'Are you sure?' }, class:"nav-link" %> </button> |
+  <button type="button" class="btn btn-primary text-white" color="inherit"> <%= link_to 'Back', root_path, class:"nav-link" %> </button>
 
-<%= link_to 'New Tier List Item', new_tier_list_tier_list_item_path(@tier_list) %>
-<%= link_to 'Edit', edit_tier_list_path(@tier_list) %> |
-<%= link_to 'Back', tier_lists_path %>
-
-
-<%= link_to 'Edit', edit_tier_list_path(@tier_list) %> |
-<%= link_to 'Back', tier_lists_path %>
+  </body>
+</div>

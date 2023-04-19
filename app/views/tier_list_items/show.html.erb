@@ -1,30 +1,28 @@
 <p id="notice"><%= notice %></p>
+<body style="background-color:tan;">
+  <div class="container">
+    <h6 role="heading">
+      <strong>Name:</strong>
+      <%= @tier_list_item.name %>
+    </h6>
 
-<p>
-  <strong>Tier list:</strong>
-  <%= @tier_list_item.tier_list_id %>
-</p>
+    <h6 role="heading">
+      <strong>Description:</strong>
+      <%= @tier_list_item.description %>
+    </h6
 
-<p>
-  <strong>Name:</strong>
-  <%= @tier_list_item.name %>
-</p>
+    <h6 role="heading">
+      <strong>Tier:</strong>
+      <%= @tier_list_item.tier %>
+    </h6>
 
-<p>
-  <strong>Tier:</strong>
-  <%= @tier_list_item.tier %>
-</p>
+    <h6 role="heading">
+      <strong>Justification:</strong>
+      <%= @tier_list_item.justification %>
+    </h6>
 
-<p>
-  <strong>Justification:</strong>
-  <%= @tier_list_item.justification %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @tier_list_item.description %>
-</p>
-<%= link_to 'New Tier List Item', new_tier_list_tier_list_item_path(@tier_list) %>
-
-<%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, @tier_list_item) %> |
-<%= link_to 'Back', tier_list_path(@tier_list) %>
+    <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, @tier_list_item), class:"nav-link" %></button> |
+    <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Destroy', tier_list_tier_list_item_path(@tier_list, @tier_list_item), method: :delete, data: { confirm: 'Are you sure?' },    class:"nav-link" %> </button> |
+    <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Back', tier_list_path(@tier_list) , class:"nav-link" %></button>
+  </div>
+</body>

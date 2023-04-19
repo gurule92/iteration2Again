@@ -1,5 +1,10 @@
-<h1>Editing Tier List Item</h1>
+<body style="background-color:tan;">
+<div class="container">
+<h1 role="heading">Editing Item</h1>
 
 <%= render 'form', tier_list_item: @tier_list_item %>
+<br>
+<button type="button" class="btn btn-primary"><%= link_to 'Back', tier_list_path(@tier_list), class:"nav-link" %> </button>
+</div>
+</body
 
-<%= link_to 'Back', tier_list_path(@tier_list) %>

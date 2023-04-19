@@ -20,8 +20,7 @@ class TierListItemsController < ApplicationController
 
   # GET /tier_list_items/1/edit
   def edit
-    @tier_list = TierList.find(params[:tier_list_id])
-    @tier_list_item = @tier_list.tier_list_items.build  end
+  end
   # POST /tier_list_items or /tier_list_items.json
   def create
     @tier_list = TierList.find(params[:tier_list_id])
@@ -38,7 +37,7 @@ class TierListItemsController < ApplicationController
   def update
     respond_to do |format|
       if @tier_list_item.update(tier_list_item_params)
-        format.html { redirect_to tier_list_item_url(@tier_list_item), notice: "Tier list item was successfully updated." }
+        format.html { redirect_to tier_list_tier_list_item_path(@tier_list, @tier_list_item), notice: "Tier list item was successfully updated." }
         format.json { render :show, status: :ok, location: @tier_list_item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -46,21 +45,24 @@ class TierListItemsController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /tier_list_items/1 or /tier_list_items/1.json
   def destroy
     @tier_list_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to tier_list_items_url, notice: "Tier list item was successfully destroyed." }
+      format.html { redirect_to tier_list_path(@tier_list), notice: 'Tier list item was successfully destroyed.' }
       format.json { head :no_content }
+
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tier_list_item
-      @tier_list_item = TierListItem.find(params[:id])
+      @tier_list = TierList.find(params[:tier_list_id])
+      @tier_list_item = @tier_list.tier_list_items.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
