@@ -60,6 +60,8 @@ group :test do
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 4.0'
   gem 'simplecov', require: false
 end
 

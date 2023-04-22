@@ -1,7 +1,7 @@
 <%= form_with(model: [tier_list_item.tier_list, tier_list_item], local: true) do |form| %>
   <% if tier_list_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tier_list_item.errors.count, "error") %> prohibited this tier_list_item from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4><%= pluralize(tier_list_item.errors.count, "error") %> prohibited this tier_list_item from being saved:</h4>
       <ul>
         <% tier_list_item.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,29 +10,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :tier %>
-    <%= form.number_field :tier, min: 1, max: tier_list_item.tier_list.numTiers %>  </div>
-
-  <div class="field">
-    <%= form.label :justification %>
-    <%= form.text_area :justification %>
+  <div class="form-group">
+    <%= form.label :tier, class: "form-label" %>
+    <%= form.number_field :tier, min: 1, max: tier_list_item.tier_list.numTiers, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.label :justification, class: "form-label" %>
+    <%= form.text_area :justification, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
   <%= form.hidden_field :tier_list_id, value: @tier_list.id %>
 
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mt-3">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
