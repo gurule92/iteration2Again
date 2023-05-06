@@ -20,9 +20,10 @@
       <strong>Justification:</strong>
       <%= @tier_list_item.justification %>
     </h6>
-
-    <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, @tier_list_item), class:"nav-link" %></button> |
-    <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Destroy', tier_list_tier_list_item_path(@tier_list, @tier_list_item), method: :delete, data: { confirm: 'Are you sure?' },    class:"nav-link" %> </button> |
+    <% if user_signed_in? %>
+      <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Edit', edit_tier_list_tier_list_item_path(@tier_list, @tier_list_item), class:"nav-link" %></button> |
+      <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Destroy', tier_list_tier_list_item_path(@tier_list, @tier_list_item), method: :delete, data: { confirm: 'Are you sure?' },    class:"nav-link" %> </button> |
+    <% end %>
     <button type="button" class="btn btn-primary text-white" color="inherit"><%= link_to 'Back', tier_list_path(@tier_list) , class:"nav-link" %></button>
   </div>
 </body>

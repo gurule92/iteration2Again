@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "tier_lists#index"
   resources :tier_lists do
     resources :tier_list_items, only: [:show, :new, :create, :edit, :update, :destroy]

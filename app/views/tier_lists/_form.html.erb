@@ -3,7 +3,7 @@
 <div class="container">
   <%= form_with(model: tier_list) do |form| %>
     <% if tier_list.errors.any? %>
-      <div id="error_explanation">
+      <div id="error_explanation" class="alert alert-danger">
         <h2><%= pluralize(tier_list.errors.count, "error") %> prohibited this tier_list from being saved:</h2>
 
         <ul>
@@ -14,23 +14,25 @@
       </div>
     <% end %>
 
-    <div class="field col-6">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+    <div class="row">
+      <div class="field col-6 mb-3">
+        <%= form.label :name, class: 'form-label' %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
 
-    <div class="field col-10">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-    </div>
+      <div class="field col-10 mb-3">
+        <%= form.label :description, class: 'form-label' %>
+        <%= form.text_area :description, class: 'form-control' %>
+      </div>
 
-    <div class="field col-6">
-      <%= form.label :"Number of tiers" %>
-      <%= form.number_field :numTiers %>
+      <div class="field col-6 mb-3">
+        <%= form.label :numTiers, 'Number of tiers', class: 'form-label' %>
+        <%= form.number_field :numTiers, class: 'form-control' %>
+      </div>
     </div>
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>

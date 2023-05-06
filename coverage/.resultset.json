@@ -1,0 +1,280 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/root/iteration2Again/app/controllers/tier_lists_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          3,
+          2,
+          1,
+          null,
+          4,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          2,
+          1,
+          null,
+          4,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          9,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/root/iteration2Again/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/root/iteration2Again/app/models/tier_list_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          16,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/root/iteration2Again/app/models/tier_list.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/root/iteration2Again/app/controllers/tier_list_items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          1,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/root/iteration2Again/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/helpers/tier_list_items_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/helpers/tier_lists_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/iteration2Again/app/models/user.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1682145862
+  }
+}
